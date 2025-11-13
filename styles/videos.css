@@ -1,0 +1,100 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1; /* keep footer at bottom */
+}
+
+/* ------------------------------ */
+/* GALLERY LAYOUT */
+/* ------------------------------ */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Each video item */
+.video-grid iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on desktop */
+.video-grid iframe:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}
+
+/* ------------------------------ */
+/* GALLERY SECTION TEXT */
+/* ------------------------------ */
+.gallery {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.gallery h2 {
+  font-family: "AkkhayarBrush";
+  font-size: 1.8rem;
+  color: #ffae0a;
+  margin-bottom: 0.5rem;
+}
+
+.gallery p {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* ------------------------------ */
+/* RESPONSIVENESS */
+/* ------------------------------ */
+@media (max-width: 900px) {
+  .video-grid {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .gallery h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .video-grid iframe {
+    border-radius: 8px;
+  }
+
+  .gallery h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* ------------------------------ */
+/* FOOTER */
+/* ------------------------------ */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: #bbb;
+  font-size: 0.9rem;
+}

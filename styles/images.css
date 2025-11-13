@@ -1,0 +1,98 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1; /* keep footer at bottom */
+}
+
+.gallery {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.gallery h2 {
+  font-family: "AkkhayarBrush";
+  font-size: 1.5rem;
+  color: #ffae0a;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:active {
+  transform: scale(0.97);
+}
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+  touch-action: none; /* important for touch gestures */
+  cursor: grab;
+}
+
+#close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#close:hover {
+  color: #ffae0a;
+}
+
+/* optional footer styling */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+/* Optional: tweak for smaller screens */
+@media (max-width: 600px) {
+  .gallery h2 {
+    font-size: 1.2rem;
+  }
+
+  .gallery-grid img {
+    height: 150px;
+  }
+}
