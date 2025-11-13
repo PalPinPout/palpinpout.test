@@ -91,9 +91,6 @@ nav {
   display: block;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content, .dropdown:active .dropdown-content {display: block;}
 .dropbtn:active{
@@ -309,4 +306,5 @@ footer {
       max-height: 480px;
     }
   }
+
 }
